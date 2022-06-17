@@ -1,0 +1,15 @@
+<div class="example-container" [formGroup]="form">
+    <mat-form-field appearance="fill">
+        <mat-label>Enter your email</mat-label>
+        <input matInput placeholder="pat@example.com" formControlName="email" required>
+        <mat-error *ngIf="email?.invalid && !email?.errors?.['email']">Поле обязательно для заполнения</mat-error>
+        <mat-error *ngIf="email?.invalid && email?.errors?.['email']">Электронная почта заполнена не верно</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Enter your password</mat-label>
+        <input matInput type="password" formControlName="password">
+        <mat-error *ngIf="password?.invalid">Поле обязательно для заполнения</mat-error>
+    </mat-form-field>
+    <mat-slide-toggle formControlName="rememberMe">Remember me</mat-slide-toggle>
+    <button mat-raised-button color="primary" [disabled]="form.invalid" (click)="login()">Login</button>
+</div>

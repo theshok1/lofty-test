@@ -1,0 +1,15 @@
+<h2 mat-dialog-title>Create Post</h2>
+<mat-dialog-content class="mat-typography" [formGroup]="form">
+    <mat-form-field appearance="fill">
+        <mat-label>Title</mat-label>
+        <input matInput formControlName="title">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Body</mat-label>
+        <textarea matInput formControlName="body"></textarea>
+    </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-button [mat-dialog-close]="form.value" cdkFocusInitial [disabled]="form.invalid">Create</button>
+</mat-dialog-actions>

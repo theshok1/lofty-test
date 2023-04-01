@@ -5,6 +5,7 @@
 /tmp
 /out-tsc
 /bazel-out
+/node-modules
 
 # Node
 npm-debug.log
@@ -40,3 +41,5 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+package-lock.json
+package.json
